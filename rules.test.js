@@ -68,9 +68,9 @@ test('chess validates mate, offers four promotions, and restores the board after
   assert.equal(state.result.winner,0)
 })
 
-test('Reversi flips bounded lines and ends when neither player can place', () => {
+test('Othello starts with the standard legal moves, flips discs, and stops when neither side can play', () => {
   let state = createReversi()
-  assert.equal(reversiMoves(state).length,4)
+  assert.deepEqual(reversiMoves(state).map(move => move.to),[19,26,37,44])
   state = playReversi(state,reversiMoves(state)[0])
   assert.equal(state.board.filter(p=>p===1).length,4)
   assert.equal(state.board.filter(p=>p===-1).length,1)
