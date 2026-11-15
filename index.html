@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play Checkers, Chinese Checkers, Chess, Reversi and Four in a Row against the computer or a friend.">
+  <title>SurfingCoder Board Games</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./game.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#games">Skip to the games</a>
+  <main id="games">
+    <header class="game-heading">
+      <h1>SurfingCoder <span>Board Games</span></h1>
+    </header>
+    <nav id="game-picker" class="game-picker" aria-label="Choose a board game">
+      <a id="checkers" href="#checkers" aria-current="true">Checkers</a>
+      <a id="chinese-checkers" href="#chinese-checkers">Chinese Checkers</a>
+      <a id="chess" href="#chess">Chess</a>
+      <a id="reversi" href="#reversi">Reversi</a>
+      <a id="four-in-a-row" href="#four-in-a-row">Four in a Row</a>
+    </nav>
+    <section class="game-table" aria-labelledby="game-name">
+      <div class="play-area">
+        <div class="board-frame">
+          <div id="board" role="group" aria-label="Game board"></div>
+        </div>
+      </div>
+      <aside class="game-panel" aria-label="Game controls">
+        <h2 id="game-name">Checkers</h2>
+        <div class="sides" aria-label="Players">
+          <span id="first-side"><i class="sample sea"></i><span></span></span>
+          <span id="second-side"><i class="sample sun"></i><span></span></span>
+        </div>
+        <p id="status" role="status"></p>
+        <p id="score"></p>
+        <div class="game-options">
+          <label for="opponent">Opponent</label>
+          <select id="opponent">
+            <option value="computer">Computer</option>
+            <option value="local">Two players</option>
+          </select>
+          <button id="restart" type="button">New game</button>
+        </div>
+        <details class="rules" open>
+          <summary>How to play</summary>
+          <p id="rules"></p>
+        </details>
+        <a class="source-link" href="https://github.com/netcodermike/surfingcoder-board-games">Game source ↗</a>
+      </aside>
+    </section>
+    <dialog id="promotion">
+      <form method="dialog">
+        <h2>Promote your pawn</h2>
+        <div class="promotion-choices">
+          <button value="q">Queen</button>
+          <button value="r">Rook</button>
+          <button value="b">Bishop</button>
+          <button value="n">Knight</button>
+        </div>
+      </form>
+    </dialog>
+    <noscript>Enable JavaScript to play the board games.</noscript>
+  </main>
+</body>
+</html>
