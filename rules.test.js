@@ -6,6 +6,21 @@ import {createChess,chessMoves,playChess,chooseChess} from './chess-game.js'
 import {createReversi,reversiMoves,playReversi} from './reversi.js'
 import {createFour,fourMoves,playFour,chooseFour} from './four.js'
 
+test('the reported b2 position requires b4 to jump c5 and land on d6', () => {
+  let state = createCheckers()
+  for (const [from, to] of [[40, 33], [19, 26]]) {
+    state = playCheckers(state, checkersMoves(state).find(move => move.from === from && move.to === to))
+  }
+  assert.equal(state.board[49], 1)
+  assert.equal(state.board[40], 0)
+  assert.deepEqual(checkersMoves(state), [{from:33, to:19, capture:26}])
+  state = playCheckers(state, checkersMoves(state)[0])
+  assert.equal(state.board[33], 0)
+  assert.equal(state.board[26], 0)
+  assert.equal(state.board[19], 1)
+  assert.equal(state.turn, -1)
+})
+
 test('checkers forces a chain and crowns without granting an extra jump', () => {
   let state = createCheckers()
   state.board.fill(0)

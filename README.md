@@ -6,6 +6,8 @@ Play [SurfingCoder Board Games](https://surfingcoder.com/board-games/) in your b
 
 Pick a game, then choose **Computer** or **Two players**. In two-player mode, take turns on the same device. Use **New game** to reset the selected board. The game picker keeps each board in memory while the page is open. Use the arrow keys to move between squares and press Enter or Space to select.
 
+In Checkers, a gold ring marks each piece with a required capture. When a single piece can capture, its legal landing squares appear automatically. The status names the required jump and explains blocked selections. A jump available elsewhere on the board takes priority over moving another piece.
+
 | Game | How to win |
 | --- | --- |
 | Checkers | Capture every opposing piece or leave the opponent without a move. Captures and chains are compulsory. Promotion ends your turn. This version automatically draws after three repetitions or 80 half-moves without a capture or man move. |
